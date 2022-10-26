@@ -1,0 +1,60 @@
+relational database
+
+structure of info in tables, rows, and columns
+establish links/relationships between tables
+
+eg. postgresql, mysql, oracle
+
+sql vs nosql
+nosql = no relations, dynamic
+
+primary key = unique attribute of a row/entry, cannot be null
+foreign key = primary key yg digunakan di table lain
+
+relationships
+-one to many
+eg. articles, comments
+-many to many
+eg. users, roles, role_users
+-one to one
+eg. user, phone
+
+ERD (Entity Relational Diagram)
+-entity
+table names, nouns
+-attribute
+columns of table, keys
+-relationship
+verbs
+
+DDL (Data Definition Language)
+  create table 
+  alter table 
+  drop table
+
+\l = list databases
+\dt = list tables in a database
+\d+ <table_name> = list columns in a table
+
+DML (Data Manipulation Language)
+  insert
+  update
+
+join types:
+  -left
+  -right
+  -inner
+  -outer
+
+aggregate function
+  count, sum, max, min, avg
+
+subquery
+  query within query
+  multi steps query
+
+stored procedures
+  create and save functions into database
+  can be called
+
+tugas: liat ppt
