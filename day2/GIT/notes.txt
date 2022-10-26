@@ -1,0 +1,79 @@
+version control system
+with git
+
+1)
+git init <options>
+inisiasi new repository
+
+2)
+git add <file>
+ . (all files)
+ index.js (individual file)
+ <directory name> (directory)
+track perubahan files
+
+3)
+git commit
+ -m <commit description> (m for message)
+snapshots changes
+
+stage chance? = repository
+
+4)
+git remote
+ add origin <repository link> (first time)
+
+5)
+git push 
+ origin master (master = main repository branch)
+upload to repository
+incase of login issues, generate access tokens through github dev options
+
+git fetch
+ origin
+check for changes in repository when collaborating
+
+git pull
+ origin master
+download changes to local directory
+
+git branch
+ -a
+
+git checkout
+ -b
+brings files in master into new branch
+
+git merge
+merges branch to master
+
+git stash
+temporarily shelves changes so you can work on something else but not ready to commit
+
+
+semantic versioning
+patch: fix
+minor: feature
+major: eg. api change
+
+v1.0.0
+major, minor, patch
+
+
+git management
+-trunk based development
+Trunk-based development is a version control management practice where developers merge small, frequent updates to a core “trunk” or main branch. It’s a common practice among DevOps teams and part of the DevOps lifecycle since it streamlines merging and integration phases. In fact, trunk-based development is a required practice of CI/CD. Developers can create short-lived branches with a few small commits compared to other long-lived feature branching strategies. As codebase complexity and team size grow, trunk-based development helps keep production releases flowing.
+
+repository tugas2
+academy/ -> git init
+day1/RFC
+day2/GIT
+day3/
+etc..
+
+tugas day2:
+install postgreSQL
+install dbeaver
+test connection database (optional)
+
+
