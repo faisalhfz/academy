@@ -1,0 +1,33 @@
+go programming language
+
+2009: released as open source
+
+google, gojek, tokopedia, efishery
+
+initiate go proj
+
+mkdir 
+cd 
+go mod init
+go run main.go
+
+datatype
+
+numeric non decimal: uint, int, byte
+
+numeric decimal: float
+
+printf: with format
+%s = string
+%f = float
+%d = integer
+%t = bool
+
+_ = trash variable
+
+struct = object
+cannot have default values
+
+embedded struct
+
+maps
