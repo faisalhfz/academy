@@ -1,0 +1,54 @@
+advanced golang
+
+pointer
+= reference/alamat memori
+= variable used to store memory address of another variable
+= special variables
+= memory address in system
+
+var x = 100
+var y *int = &x
+
+x -> 100
+^
+|
+y
+
+&x: address of x
+*x: reference of x
+
+can be used for any datatypes
+
+%p = address for pointer
+
+a struct/array/slice pointer will have an address of its first variable
+
+pointer can indirectly modify a variable
+
+method
+  function utk struct
+
+defining struct method
+func (s struct) function() {}
+
+var s1 = s{}
+s1.function()
+
+package <folder name>
+// in another go file
+import "<package name>" 
+variable starts with capital = public
+else = private
+
+interface
+  set of methods
+  'contract'
+
+sequential vs concurrent vs parallel
+
+goroutine
+  executed concurrently
+  keyword 'go'
+
+waitgroup
+  import "sync"
