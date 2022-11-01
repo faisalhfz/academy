@@ -1,0 +1,81 @@
+REST API
+representational state transfer: architecture style that defines a set of constraints to create web services
+application programming interface
+client <-> API <-> server
+http/https
+hypertext transfer protocol (secure)
+generic, stateless: kembalian sama
+TLS, SSL, assymmetric public key infrastruture
+http v1,2,.. depends on usage
+client -> request -> server -> response -> client
+http structure: 
+message
+body
+payload
+headers (optional): additional information
+
+http methods:
+get: retrieve resource, tidak bisa merubah state
+
+url: http://www.appdomain.com/users?size=20/123/address
+? : query parameter
+post: create resource
+put: update resource
+patch: similar to put, but only partial update to resource, only part of body that is received is changed
+delete: delete resources, doesnt require body
+
+status codes:
+2xx: success
+200 ok
+201 created
+202 accepted: request received but not yet completed because of processing
+
+4xx: client error
+400 bad request: incorrect syntax, insufficient info
+401 unauthorized: no user authentication 
+403 forbidden: unauthorized request, client does not have access
+404 not found: no resource can be found
+405 method not allowed: request method is known but 
+
+5xx: server error, error in code
+500 internal server error: unexpected condition preventing request to be fulfilled
+502 bad gateway: gateway error (backend infra)
+504 gateway timeout: (backend infra)
+
+API format data: xml/json
+xml: older, similar to html
+json (javascript object notation): newer, lightweight hence faster response
+{
+  "<key>": <value>
+}
+parsing json:
+jsonlint.com
+app.quicktype.io
+
+authorization
+header: algorithm, token type
+payload
+signature
+
+JWT: JSON Web Token
+open standard, digital signature in json format, using HMAC algorithm or public/private key pair
+jwt.io -> for parsing JWT tokens
+API tools: postman, insomnia
+response format: make it uniform
+success
+message
+data
+
+environment: local, staging, production
+ECHO framework: web server framework for Go
+high performance, extensible, minimalist
+unit testing: software dev process smallest testable parts (unit test)
+unit tests, integration tests, end2end tests
+ → slow, ← cheap
+<file_name>_test.go
+parameter *testing.T
+go test command
+logging: records
+what to log: bug, performance problems, post-mortem analysis
+import "log"
+Go log framework: Glog, Logrus, dll
