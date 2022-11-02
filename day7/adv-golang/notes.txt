@@ -1,0 +1,18 @@
+clean architecture
+  tidak baku
+
+request/response <-> handler <-> usecase <-> repository <-> database
+
+handler -> inport: variables library -> usecase
+
+usecase -> interactor: validasi
+
+gorm: framework orm for golang
+  orm: object relational mapping
+    sql translated to preferred programming language
+
+fiber: http framework for golang
+
+godotenv: ability to use environment variables
+
+copier: copy variables
