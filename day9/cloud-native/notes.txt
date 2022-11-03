@@ -1,0 +1,10 @@
+nomad
+  container orchestrator
+  alternative to kubernetes (google)
+  can run container and OS, kubernetes only container
+  single binary <40mb -> nomad 'agent' -> nomad server, nomad client
+  less resource than kubernetes, able to have more users with the same server size, but less support and documentation
+
+job
+  \_ group
+        \_ task
