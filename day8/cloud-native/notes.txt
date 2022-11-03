@@ -1,0 +1,27 @@
+aqua developer infra playground
+
+cloud native computing foundation: organisasi utk distribusi, regulasi software infra; eg. docker, container
+
+cloud native: cloud architecture private
+
+pillars of cloud native: modern design
+
+docker: container engine
+  deploy/production
+  compile app in virtual container
+  multi-OS
+  kernel + containers 
+  docker build: OS, 'image' (.ISO), template
+  container = virtual machine
+  registry: tempat penyimpanan image
+
+virtual machine vs container
+container: less resource, no hypervisor, memory allocation unlocked
+
+-d: detach
+-P: port (random)
+-p: specify port
+--rm: remove container after exit
+-t: tag
+
+tugas: install docker compose sampai jalan
