@@ -42,7 +42,7 @@ docker-compose build
 docker-compose up -d
 ```
 
-To stop docker containers from running, run:
+To stop the program running in docker containers, run:
 
 ```
 docker-compose down
