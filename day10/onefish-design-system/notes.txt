@@ -1,0 +1,19 @@
+design system
+  set of standard to manage design at scale using reusable components and patterns
+  logo, color palette, font
+
+why?
+  design work can be replicated quickly at scale
+  focuses on how product is developed
+  consistent
+  reference for junior designers
+
+OneFish design system
+  efishery's design system
+  react.js framework
+  based on chakra ui
+  design tool: figma
+
+see design -> read docs -> write code
+
+deploy app: railway, qovery, render, fly.io
