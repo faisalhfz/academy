@@ -2,9 +2,9 @@
 
 This program is a REST API for a simple e-commerce website written in Go with the following features:
 
-1. Create listings for products to sell
-2. List available products to buy with filtering
-3. Add products to a shopping cart and checkout
+- Create listings for products to sell
+- List available products to buy with filtering
+- Add products to a shopping cart and checkout
 
 ## Problem & Motivation
 
@@ -40,6 +40,12 @@ To run program in docker compose, revert previous comments in `.env` file then r
 ```
 docker-compose build
 docker-compose up -d
+```
+
+To stop docker containers from running, run:
+
+```
+docker-compose down
 ```
 
 ## API Documentation
