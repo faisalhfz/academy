@@ -1,0 +1,1586 @@
+{
+	"info": {
+		"_postman_id": "bcc57689-9300-4bdc-aacc-544e86a45fb4",
+		"name": "E-Commerce API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24354393"
+	},
+	"item": [
+		{
+			"name": "Welcome Page",
+			"item": [
+				{
+					"name": "Welcome Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:1323/api/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create Products",
+					"item": [
+						{
+							"name": "Add Product With Invalid Payload",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": 123,\r\n    \"image\": \"https://cdn.eraspace.com/media/catalog/product/r/a/razer_mouse_viper_mini_1.jpg\",\r\n    \"price\": \"700000\",\r\n    \"category\": \"mice\",\r\n    \"description\": \"wired; black; rgb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product A",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"razer mouse\",\r\n    \"image\": \"https://cdn.eraspace.com/media/catalog/product/r/a/razer_mouse_viper_mini_1.jpg\",\r\n    \"price\": 700000,\r\n    \"category\": \"mice\",\r\n    \"description\": \"wired; black; rgb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product B",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"logitech mouse\",\r\n    \"image\": \"https://media-cdn.bnn.in.th/4960/Logitech-Gaming-1.-square_medium.jpg\",\r\n    \"price\": 1200000,\r\n    \"category\": \"mice\",\r\n    \"description\": \"wireless; white\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product C",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"logitech keyboard\",\r\n    \"image\": \"https://cf.shopee.co.id/file/825dc3ff2657041120ff268da79ff5ed\",\r\n    \"price\": 1500000,\r\n    \"category\": \"keyboards\",\r\n    \"description\": \"mechanical; tkl; rgb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product D",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"razer mousepad\",\r\n    \"image\": \"https://m.media-amazon.com/images/I/81EvfPatrjL._AC_SS450_.jpg\",\r\n    \"price\": 500000,\r\n    \"category\": \"mousepads\",\r\n    \"description\": \"450x400mm\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Products",
+					"item": [
+						{
+							"name": "Get All Products",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products By Category",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category",
+											"value": "mice",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products By Price",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "minprice",
+											"value": "500000",
+											"type": "default"
+										},
+										{
+											"key": "maxprice",
+											"value": "1000000",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products By Category and Price",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category",
+											"value": "mice",
+											"type": "default"
+										},
+										{
+											"key": "minprice",
+											"value": "500000",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "maxprice",
+											"value": "1000000",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products Outside Filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category",
+											"value": "headsets",
+											"type": "default"
+										},
+										{
+											"key": "minprice",
+											"value": "500000",
+											"type": "default"
+										},
+										{
+											"key": "maxprice",
+											"value": "1000000",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product With Invalid Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/xx",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"xx"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product Not In Database",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/100",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product A",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/1",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product B",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/2",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product C",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/3",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product D",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/4",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update Products",
+					"item": [
+						{
+							"name": "Update Product With Invalid Id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"logitech mouse discounted\",\r\n    \"image\": \"https://media-cdn.bnn.in.th/4960/Logitech-Gaming-1.-square_medium.jpg\",\r\n    \"price\": 1000000,\r\n    \"category\": \"mice\",\r\n    \"description\": \"wireless; white\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products/xx",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"xx"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product Not In Database",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"logitech mouse discounted\",\r\n    \"image\": \"https://media-cdn.bnn.in.th/4960/Logitech-Gaming-1.-square_medium.jpg\",\r\n    \"price\": 1000000,\r\n    \"category\": \"mice\",\r\n    \"description\": \"wireless; white\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products/100",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product With Invalid Payload",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": 123,\r\n    \"image\": \"https://media-cdn.bnn.in.th/4960/Logitech-Gaming-1.-square_medium.jpg\",\r\n    \"price\": \"1000000\",\r\n    \"category\": \"mice\",\r\n    \"description\": \"wireless; white\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products/2",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product B",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"logitech mouse discounted\",\r\n    \"image\": \"https://media-cdn.bnn.in.th/4960/Logitech-Gaming-1.-square_medium.jpg\",\r\n    \"price\": 1000000,\r\n    \"category\": \"mice\",\r\n    \"description\": \"wireless; white\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products/2",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product C",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"logitech keyboard discounted\",\r\n    \"image\": \"https://cf.shopee.co.id/file/825dc3ff2657041120ff268da79ff5ed\",\r\n    \"price\": 1400000,\r\n    \"category\": \"keyboards\",\r\n    \"description\": \"mechanical; tkl; rgb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products/3",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product B After Update",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/2",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product C After Update",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/3",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products After Update",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Products",
+					"item": [
+						{
+							"name": "Delete Product with Invalid Id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/xx",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"xx"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product Not In Database",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/100",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product A",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/1",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product B",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/2",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product C",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/3",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product D",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/4",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products After Deletion",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Create Products",
+					"item": [
+						{
+							"name": "Add Product A",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"razer mouse\",\r\n    \"image\": \"https://cdn.eraspace.com/media/catalog/product/r/a/razer_mouse_viper_mini_1.jpg\",\r\n    \"price\": 700000,\r\n    \"category\": \"mice\",\r\n    \"description\": \"wired; black; rgb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product B",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"logitech mouse discounted\",\r\n    \"image\": \"https://media-cdn.bnn.in.th/4960/Logitech-Gaming-1.-square_medium.jpg\",\r\n    \"price\": 1000000,\r\n    \"category\": \"mice\",\r\n    \"description\": \"wireless; white\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product C",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"logitech keyboard discounted\",\r\n    \"image\": \"https://cf.shopee.co.id/file/825dc3ff2657041120ff268da79ff5ed\",\r\n    \"price\": 1400000,\r\n    \"category\": \"keyboards\",\r\n    \"description\": \"mechanical; tkl; rgb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product D",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"razer mousepad\",\r\n    \"image\": \"https://m.media-amazon.com/images/I/81EvfPatrjL._AC_SS450_.jpg\",\r\n    \"price\": 500000,\r\n    \"category\": \"mousepads\",\r\n    \"description\": \"450x400mm\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/products",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add Products To Cart",
+					"item": [
+						{
+							"name": "Add Product with Invalid Id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/xx",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"xx"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product Not In Database",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/100",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product A To Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/5",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product List After 1 Item",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product C To Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/7",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product List After 2 Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product D To Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/8",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product List After 3 Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Clearing Cart",
+					"item": [
+						{
+							"name": "Clear Products In Cart",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Empty Cart",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Checkout Cart",
+					"item": [
+						{
+							"name": "Checkout Non Existing Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pin\": \"1a2b3c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product A To Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/5",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product C To Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/7",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product D To Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/8",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products In Cart",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Checkout Cart With Invalid Transaction Pin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pin\": \"1a2b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Checkout Cart With Valid Transaction PIN",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pin\": \"1a2b3c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Cart After Checkout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction History",
+			"item": [
+				{
+					"name": "Another Checkout",
+					"item": [
+						{
+							"name": "Add Product A To Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/5",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product C To Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/products/7",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products In Cart",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Checkout Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pin\": \"1a2b3c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Cart After Checkout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:1323/api/v1/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "1323",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Transaction History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:1323/api/v1/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
