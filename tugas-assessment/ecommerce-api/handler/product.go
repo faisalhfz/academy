@@ -8,6 +8,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strconv"
 
 	"github.com/jinzhu/copier"
@@ -23,37 +24,42 @@ func NewProductHandler(pUsecase *usecase.ProductUsecase, cUsecase *usecase.CartU
 	return &ProductHandler{pUsecase: pUsecase, cUsecase: cUsecase}
 }
 
-func downloadFile(URL, fileName string) error {
-	response, err := http.Get(URL)
+func createProductRequest(ctx echo.Context) (request.CreateProductRequest, error) {
+	name := ctx.FormValue("name")
+	image, err := ctx.FormFile("image")
 	if err != nil {
-		return err
+		return request.CreateProductRequest{}, err
 	}
-	defer response.Body.Close()
-	file, err := os.Create(fileName)
+	src, err := image.Open()
 	if err != nil {
-		return err
+		return request.CreateProductRequest{}, err
 	}
-	defer file.Close()
-	_, err = io.Copy(file, response.Body)
+	defer src.Close()
+	dst, err := os.Create(image.Filename)
 	if err != nil {
-		return err
+		return request.CreateProductRequest{}, err
 	}
-	return nil
+	defer dst.Close()
+	if _, err = io.Copy(dst, src); err != nil {
+		return request.CreateProductRequest{}, err
+	}
+	absPath, _ := filepath.Abs("./")
+	imgPath := absPath + "\\" + image.Filename
+	price, err := strconv.Atoi(ctx.FormValue("price"))
+	if err != nil {
+		return request.CreateProductRequest{}, err
+	}
+	category := ctx.FormValue("category")
+	description := ctx.FormValue("description")
+	return request.CreateProductRequest{Name: name, Image: imgPath, Price: price, Category: category, Description: description}, nil
 }
 
 func (pHandler ProductHandler) PostProductHandler(ctx echo.Context) error {
-	productRequest := request.CreateProductRequest{}
-	if err := ctx.Bind(&productRequest); err != nil {
+	productRequest, err := createProductRequest(ctx)
+	if err != nil {
 		return ctx.JSON(http.StatusBadRequest, response.BaseResponse{
 			Code:    http.StatusBadRequest,
 			Message: "Invalid request body",
-			Data:    nil,
-		})
-	}
-	if err := downloadFile(productRequest.Image, productRequest.Name+".jpg"); err != nil {
-		return ctx.JSON(http.StatusBadRequest, response.BaseResponse{
-			Code:    http.StatusBadRequest,
-			Message: "Failed to download image to directory",
 			Data:    nil,
 		})
 	}
@@ -142,18 +148,11 @@ func (pHandler ProductHandler) PutProductByIdHandler(ctx echo.Context) error {
 			Data:    nil,
 		})
 	}
-	productRequest := request.CreateProductRequest{}
-	if err := ctx.Bind(&productRequest); err != nil {
+	productRequest, err := createProductRequest(ctx)
+	if err != nil {
 		return ctx.JSON(http.StatusBadRequest, response.BaseResponse{
 			Code:    http.StatusBadRequest,
 			Message: "Invalid request body",
-			Data:    nil,
-		})
-	}
-	if err := downloadFile(productRequest.Image, productRequest.Name); err != nil {
-		return ctx.JSON(http.StatusBadRequest, response.BaseResponse{
-			Code:    http.StatusBadRequest,
-			Message: "Failed to download image to directory",
 			Data:    nil,
 		})
 	}

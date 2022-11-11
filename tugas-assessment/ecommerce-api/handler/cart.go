@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"ecommerce-api/entity/request"
 	"ecommerce-api/entity/response"
 	"ecommerce-api/usecase"
 	"net/http"
@@ -45,15 +44,16 @@ func (cHandler CartHandler) PostCartHandler(ctx echo.Context) error {
 			Data:    nil,
 		})
 	}
-	transactionPin := request.TransactionPinRequest{}
-	if err := ctx.Bind(&transactionPin); err != nil {
-		return ctx.JSON(http.StatusBadRequest, response.BaseResponse{
-			Code:    http.StatusBadRequest,
-			Message: "Invalid request body",
-			Data:    nil,
-		})
-	}
-	if len(transactionPin.PIN) != 6 {
+	// transactionPin := request.TransactionPinRequest{}
+	transactionPIN := ctx.FormValue("pin")
+	// if err := ctx.Bind(&transactionPin); err != nil {
+	// 	return ctx.JSON(http.StatusBadRequest, response.BaseResponse{
+	// 		Code:    http.StatusBadRequest,
+	// 		Message: "Invalid request body",
+	// 		Data:    nil,
+	// 	})
+	// }
+	if len(transactionPIN) != 6 {
 		return ctx.JSON(http.StatusBadRequest, response.BaseResponse{
 			Code:    http.StatusBadRequest,
 			Message: "Invalid transaction PIN",
